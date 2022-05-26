@@ -90,24 +90,14 @@ const vowelsChecker = (str) => {
   let vowels = "aeiou" + "AEIOU";
   let totalVowels = 0;
  
-  for(const char of vowels) { /*Trying to get y defined correctly as consanant or vowel*/
-    if ( !str.includes(char) ) {
-      vowels = vowels + "y" + "Y"
+  for(const char of str) { /*Trying to get y defined correctly as consanant or vowel*/
+    if ( vowels.includes(char) ) {
+      totalVowels +=1;
     }
-    if(str.lenght-1 === char && str.length-2 === char ) {
-    vowels = "aeiou" + "AEIOU";
-    totalVowels -=1;
-  }
-  }
-  
-  for(const c of str) {  
-    if ( vowels.includes(c) ) {
-      totalVowels+=1;
-      }
+    if(str.lenght-1 === "y" || "Y" && !vowels.includes(str.length-2) ) {
+    vowels += "Yy";
     }
-
-  
-    
+  }    
   if(totalVowels > 0) {
     return totalVowels;
   } else return "©'M0/\/ p@l'";
