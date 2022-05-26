@@ -18,8 +18,10 @@
 // Happy Birthday!
 // Happy Birthday!
 
-function happyBirthday() {
-
+function happyBirthday(String) {
+  for(let i=0; i < 3; i++) {
+    console.log('Happy Birthday!');
+  }
 }
 
 
@@ -30,8 +32,12 @@ function happyBirthday() {
 //    should give you the following output in your console...
 // 10
 
-function sum() {
-
+function sum(n) {
+  let total = 0; 
+  for(let i=1; i <= n; i++) { /*  */
+    total += i;
+  }
+  return total
 }
 
 
@@ -39,13 +45,20 @@ function sum() {
 
 const myString = "elephant"
 
+
 // EXAMPLE:
 // console.log("testing out my function for Q3: ", removeVowels(myString));
 // should give you the following output in your console...
 // lphnt
 
-function removeVowels() {
-
+function removeVowels(myString) {
+  const vowels = ["a","e","i", "o", "u", "A", "E", "I", "O", "U"];
+  let newStr = ""
+  for(char of myString){
+    if( !vowels.includes(char) ){
+      newStr += char;
+    }
+  } return newStr;
 }
 
 
