@@ -69,8 +69,13 @@ function removeVowels(myString) {
 // should give you the following output in your console...
 // 8
 
-const oddChecker = () => {
-
+const oddChecker = (n) => {
+  let count = 0;
+  for(let i=0; i < n; i++)
+    if(i % 2 === 0) {
+      count += 1;
+    }
+  return count;
 }
 
 
@@ -81,8 +86,38 @@ const oddChecker = () => {
 // should give you the following output in your console...
 // 6
 
-const vowelsChecker = () => {
+const vowelsChecker = (str) => {
+  let vowels = "aeiou" + "AEIOU";
+  let totalVowels = 0;
+ 
+  for(const char of vowels) { /*Trying to get y defined correctly as consanant or vowel*/
+    if ( !str.includes(char) ) {
+      vowels = vowels + "y" + "Y"
+    }
+    if(str.lenght-1 === char && str.length-2 === char ) {
+    vowels = "aeiou" + "AEIOU";
+    totalVowels -=1;
+  }
+  }
+  
+  for(const c of str) {  
+    if ( vowels.includes(c) ) {
+      totalVowels+=1;
+      }
+    }
+
+  
+    
+  if(totalVowels > 0) {
+    return totalVowels;
+  } else return "©'M0/\/ p@l'";
 }
+/* 
+  if(str["y"] === str.length-1) {
+    totalVowels += 1;
+  }; 
+*/
+ 
 
 
 
