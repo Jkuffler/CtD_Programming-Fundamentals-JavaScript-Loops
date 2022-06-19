@@ -18,11 +18,20 @@
 // Happy Birthday!
 // Happy Birthday!
 
-function happyBirthday(String) {
-  for(let i=0; i < 3; i++) {
+function happyBirthday(num) {
+  for(let i=0; i < num; i++) {
     console.log('Happy Birthday!');
   }
+};
+//use while loop//
+  /*
+  let i = 0;
+  while(i < num) {
+  console.log('Happy Birthday!')
+  }
 }
+*/
+
 
 
 // QUESTION 2 (new). Write a standard function definition that takes 1 parameter. The parameter is a number and the function should return the sum of that number and all of the numbers greater than 0 below it. Example - if it was 3, it should add 3, to 1 + 2 because those are all of the numbers between 0 and 3.  Therefore it should return 6.
@@ -34,7 +43,7 @@ function happyBirthday(String) {
 
 function sum(n) {
   let total = 0; 
-  for(let i=1; i <= n; i++) { /*  */
+  for(let i=1; i <= n; i++) {
     total += i;
   }
   return total
@@ -53,13 +62,13 @@ const myString = "elephant"
 
 function removeVowels(myString) {
   const vowels = ["a","e","i", "o", "u", "A", "E", "I", "O", "U"];
-  let newStr = ""
+  let newStr = "";
   for(char of myString){
     if( !vowels.includes(char) ){
       newStr += char;
     }
   } return newStr;
-}
+};
 
 
 // QUESTION 4 (new). Write a function definition that takes 1 parameter. The parameter is a number and the function should return the number of odd numbers between 0 and that number, including the number. (Remember the modulo operator)
@@ -90,18 +99,22 @@ const vowelsChecker = (str) => {
   let vowels = "aeiou" + "AEIOU";
   let totalVowels = 0;
  
-  for(const char of str) { /*Trying to get y defined correctly as consanant or vowel*/
+  for(const char of str) { 
     if ( vowels.includes(char) ) {
       totalVowels +=1;
     }
-    if(str.lenght-1 === "y" || "Y" && !vowels.includes(str.length-2) ) {
-    vowels += "Yy";
-    }
-  }    
+  };
+  
   if(totalVowels > 0) {
     return totalVowels;
-  } else return "©'M0/\/ p@l'";
-}
+  } else return "©'M0/\\/ p@l'";
+};
+
+/*Trying to get 'y' defined correctly as consanant or vowel
+    // if(str.lenght-1 === "y" || "Y" && !vowels.includes(str.length-2) ) {  
+    // vowels += "Yy";
+    // }
+  
 /* 
   if(str["y"] === str.length-1) {
     totalVowels += 1;
